@@ -1,0 +1,40 @@
+{
+  "name": "burroughs-bot",
+  "version": "0.1.0",
+  "description": "Cut-up your messages",
+  "main": "src/index.js",
+  "private": true,
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon -x ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flurescein/Burroughs-Bot.git"
+  },
+  "keywords": [
+    "burroughs",
+    "bot",
+    "cut",
+    "up",
+    "messages",
+    "technique"
+  ],
+  "author": "flurescein",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flurescein/Burroughs-Bot/issues"
+  },
+  "homepage": "https://github.com/flurescein/Burroughs-Bot#readme",
+  "dependencies": {
+    "telegraf": "^3.38.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@types/node": "^14.0.13",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
+  }
+}
