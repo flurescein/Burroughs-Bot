@@ -27,9 +27,7 @@
   },
   "homepage": "https://github.com/flurescein/Burroughs-Bot#readme",
   "dependencies": {
-    "telegraf": "^3.38.0"
-  },
-  "devDependencies": {
+    "telegraf": "^3.38.0",
     "@types/express": "^4.17.6",
     "@types/node": "^14.0.13",
     "express": "^4.17.1",
