@@ -1,7 +1,12 @@
 import { Telegraf } from 'telegraf'
 
 import { cutup } from './cutup'
-import { start, help, savePunctuationCommand } from './messages.json'
+import {
+  start,
+  help,
+  savePunctuationCommand,
+  errorMessage,
+} from './messages.json'
 
 const bot = new Telegraf(process.env.BOT_TOKEN || '1488')
 
@@ -10,7 +15,7 @@ bot.help(({ reply }) => reply(help))
 
 bot.on('text', ({ message, reply }) => {
   if (message === undefined || message.text === undefined) {
-    return reply('Go fuck yourself!')
+    return reply(errorMessage)
   } else if (message.text.startsWith(savePunctuationCommand)) {
     const transformedMessage = cutup(
       message.text.substring(savePunctuationCommand.length),
