@@ -15,7 +15,7 @@ bot.help(({ reply }) => reply(help))
 
 bot.on('text', ({ message, reply }) => {
   if (message === undefined || message.text === undefined) {
-    return reply(errorMessage)
+    reply(errorMessage)
   } else if (message.text.startsWith(savePunctuationCommand)) {
     const transformedMessage = cutup(
       message.text.substring(savePunctuationCommand.length),
