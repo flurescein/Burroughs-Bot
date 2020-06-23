@@ -14,16 +14,18 @@ bot.start(({ reply }) => reply(start))
 bot.help(({ reply }) => reply(help))
 
 bot.on('text', ({ message, reply }) => {
-  if (message === undefined || message.text === undefined) {
+  const inputText = message?.text
+
+  if (inputText === undefined) {
     reply(errorMessage)
-  } else if (message.text.startsWith(savePunctuationCommand)) {
+  } else if (inputText.startsWith(savePunctuationCommand)) {
     const transformedMessage = cutup(
-      message.text.substring(savePunctuationCommand.length),
+      inputText.substring(savePunctuationCommand.length),
       false
     )
     reply(transformedMessage)
   } else {
-    const transformedMessage = cutup(message.text)
+    const transformedMessage = cutup(inputText)
     reply(transformedMessage)
   }
 })

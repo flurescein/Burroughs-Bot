@@ -1,5 +1,5 @@
-export function cutup(inputString: string, shouldDeletepunctuation = true) {
-  if (shouldDeletepunctuation) {
+export function cutup(inputString: string, shouldDeletePunctuation = true) {
+  if (shouldDeletePunctuation) {
     inputString = inputString
       .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '')
       .replace(/\s{2,}/g, ' ')
