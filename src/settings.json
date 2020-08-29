@@ -1,0 +1,22 @@
+{
+  "message": {
+    "start": "Just send me any text, jerk",
+    "help": "If you want me not to remove punctuation marks, start your message with the command “fckchldrn”.",
+    "error": "Go fuck yourself!"
+  },
+  "command": {
+    "savePunctuation": "fckchldrn"
+  },
+  "channels": [
+    "https://meduza.io/rss/all",
+    "https://lenta.ru/rss/news",
+    "https://russian.rt.com/inotv/s/rss/inotv_main.rss",
+    "https://tvrain.ru/export/rss/all.xml",
+    "https://rg.ru/xml/index.xml"
+  ],
+  "titleLengthRange": { "min": 3, "max": 10 },
+  "postLengthRange": { "min": 30, "max": 80 },
+  "cronCommand": "0 12,17,21 * * *",
+  "lastNewsCount": 5,
+  "channelUsername": "@burrdigest"
+}
