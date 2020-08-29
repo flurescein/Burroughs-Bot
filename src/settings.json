@@ -18,5 +18,6 @@
   "postLengthRange": { "min": 30, "max": 80 },
   "cronCommand": "0 12,17,21 * * *",
   "lastNewsCount": 5,
-  "channelUsername": "@burrdigest"
+  "channelUsername": "@burrdigest",
+  "timezone": "Europe/Moscow"
 }

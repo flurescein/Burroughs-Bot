@@ -11,6 +11,7 @@ import {
   titleLengthRange,
   postLengthRange,
   channelUsername,
+  timezone,
 } from './settings.json'
 
 const bot = new Telegraf(process.env.BOT_TOKEN || '1488')
@@ -23,20 +24,29 @@ bot.on('text', cutupMessage)
 bot.launch()
 
 // Digest.
-new CronJob(cronCommand, async () => {
-  const lastNews = await getLastNewsFromRss(channels, lastNewsCount)
+new CronJob(
+  cronCommand,
+  async () => {
+    const lastNews = await getLastNewsFromRss(channels, lastNewsCount)
 
-  const postWords = cutup(lastNews.join(' ')).split(' ')
-  const titleLength = randomBetween(titleLengthRange.min, titleLengthRange.max)
-  const postLength = randomBetween(postLengthRange.min, postLengthRange.max)
-  const post = {
-    title: capitalize(postWords.slice(0, titleLength).join(' ')),
-    text: capitalize(postWords.slice(titleLength, postLength).join(' ')),
-  }
+    const postWords = cutup(lastNews.join(' ')).split(' ')
+    const titleLength = randomBetween(
+      titleLengthRange.min,
+      titleLengthRange.max
+    )
+    const postLength = randomBetween(postLengthRange.min, postLengthRange.max)
+    const post = {
+      title: capitalize(postWords.slice(0, titleLength).join(' ')),
+      text: capitalize(postWords.slice(titleLength, postLength).join(' ')),
+    }
 
-  bot.telegram.sendMessage(
-    channelUsername,
-    `<b>${post.title}</b>\n${post.text}`,
-    Extra.HTML().markup(true)
-  )
-}).start()
+    bot.telegram.sendMessage(
+      channelUsername,
+      `<b>${post.title}</b>\n${post.text}`,
+      Extra.HTML().markup(true)
+    )
+  },
+  null,
+  false,
+  timezone
+).start()
