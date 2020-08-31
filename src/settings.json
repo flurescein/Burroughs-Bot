@@ -12,7 +12,8 @@
     "https://lenta.ru/rss/news",
     "https://russian.rt.com/inotv/s/rss/inotv_main.rss",
     "https://tvrain.ru/export/rss/all.xml",
-    "https://rg.ru/xml/index.xml"
+    "https://rg.ru/xml/index.xml",
+    "https://katab.asia/feed/"
   ],
   "titleLengthRange": { "min": 3, "max": 10 },
   "postLengthRange": { "min": 30, "max": 80 },
