@@ -15,8 +15,10 @@
     "https://rg.ru/xml/index.xml",
     "https://katab.asia/feed/"
   ],
-  "titleLengthRange": { "min": 3, "max": 10 },
-  "postLengthRange": { "min": 30, "max": 80 },
+  "range": {
+    "titleLength": { "min": 3, "max": 10 },
+    "postLength": { "min": 30, "max": 80 }
+  },
   "cronCommand": "0 12,17,21 * * *",
   "lastNewsCount": 5,
   "channelUsername": "@burrdigest",

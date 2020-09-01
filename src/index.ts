@@ -8,8 +8,7 @@ import {
   cronCommand,
   channels,
   lastNewsCount,
-  titleLengthRange,
-  postLengthRange,
+  range,
   channelUsername,
   timezone,
 } from './settings.json'
@@ -31,10 +30,10 @@ new CronJob(
 
     const postWords = cutup(lastNews.join(' ')).split(' ')
     const titleLength = randomBetween(
-      titleLengthRange.min,
-      titleLengthRange.max
+      range.titleLength.min,
+      range.titleLength.max
     )
-    const postLength = randomBetween(postLengthRange.min, postLengthRange.max)
+    const postLength = randomBetween(range.postLength.min, range.postLength.max)
     const post = {
       title: capitalize(postWords.slice(0, titleLength).join(' ')),
       text: capitalize(postWords.slice(titleLength, postLength).join(' ')),
