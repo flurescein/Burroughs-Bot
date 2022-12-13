@@ -31,7 +31,7 @@
     "@types/express": "^4.17.6",
     "@types/node": "^14.0.13",
     "cron": "^1.8.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "nodemon": "^2.0.4",
     "rss-parser": "^3.9.0",
     "telegraf": "^3.38.0",
